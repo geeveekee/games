@@ -5,3 +5,5 @@ Games
 #snakes and ladders in python
 
 #2048 in C
+
+#hangman in python
