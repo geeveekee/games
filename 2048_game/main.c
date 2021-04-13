@@ -143,7 +143,7 @@ int main()
             break;
         else if (command == 'n')
             newGame();
-        else{
+        else if (command == 'a' || command == 's' || command == 'd' || command == 'w'){
             currentDirection = commandToDir[command];
             printf("%d \n", currentDirection);
 
