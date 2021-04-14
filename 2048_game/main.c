@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-int board[4][4];
+int board[5][5];
 // directions respectively for up right down left
 int dirLine[] = {1, 0, -1, 0};
 int dirColumn[] = {0, 1, 0, -1};
@@ -15,8 +15,8 @@ struct pos
 struct pos generateUnoccupiedPos()
 {
     struct pos sus;
-    sus.a = rand() % 4;
-    sus.b = rand() % 4;
+    sus.a = rand() % 5;
+    sus.b = rand() % 5;
 
     return sus;
 }
@@ -54,8 +54,8 @@ void addPiece()
 void newGame()
 {
     printf("Hererere \n");
-    for(int i =0; i<4; i++){
-        for(int j =0 ; j<4; j++)
+    for(int i =0; i<5; i++){
+        for(int j =0 ; j<5; j++)
             board[i][j] = 0;
     }
     addPiece();
@@ -65,9 +65,9 @@ void printGraphics()
 {
     system("cls");
     char val = '.';
-    for(int i =0; i<4; ++i)
+    for(int i =0; i<5; ++i)
         {
-        for(int j = 0; j<4 ; ++j)
+        for(int j = 0; j<5 ; ++j)
             if(board[i][j] == 0)
                 printf("%3c", val);
             else
@@ -79,7 +79,7 @@ void printGraphics()
 
 int canMove(int line, int col, int nextLine, int nextCol)
 {
-    if(nextLine < 0 || nextCol < 0 || nextLine >= 4 || nextCol >= 4 || (board[line][col] != board[nextLine][nextCol]) && (board[nextLine][nextCol] != 0))
+    if(nextLine < 0 || nextCol < 0 || nextLine >= 5 || nextCol >= 5 || (board[line][col] != board[nextLine][nextCol]) && (board[nextLine][nextCol] != 0))
     {
         return 0;
     }
@@ -91,19 +91,19 @@ void applyMove(int direction)
    int startLine = 0, startCol = 0, lineStep = 1, colStep = 1;
    if(direction == 0)
    {
-       startLine = 3;
+       startLine = 4;
        lineStep = -1;
    }
    if(direction == 1)
    {
-       startCol = 3;
+       startCol = 4;
        colStep = -1;
    }
    int movePossible = 0, canAddPiece = 0;
    do{
         movePossible = 0;
-   for(int i = startLine; i>=0 && i <4; i+=lineStep)
-    for(int j = startCol; j >= 0 && j<4; j += colStep){
+   for(int i = startLine; i>=0 && i <5; i+=lineStep)
+    for(int j = startCol; j >= 0 && j<5; j += colStep){
     int nextI = i + dirLine[direction], nextJ = j + dirColumn[direction];
     if(board[i][j] && canMove(i, j, nextI, nextJ))
     {
