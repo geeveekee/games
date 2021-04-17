@@ -23,7 +23,6 @@ struct pos generateUnoccupiedPos()
 
 int check(int a, int b)
 {
-    printf("MEH");
     if (board[a][b] != 0)
     {
         return 0;
@@ -53,7 +52,6 @@ void addPiece()
 
 void newGame()
 {
-    printf("Hererere \n");
     for(int i =0; i<5; i++){
         for(int j =0 ; j<5; j++)
             board[i][j] = 0;
