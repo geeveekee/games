@@ -49,7 +49,6 @@ vlist_l = list(ladder.values())
 w = 55
 
 def cs(x, y):
-	print('in the function')
 	for i in range(0, 8):
 		q, w = klist_s[i]
 		if q==x and w ==y:
@@ -57,7 +56,6 @@ def cs(x, y):
 	return x, y
 
 def cl(x, y):
-	print('in the function')
 	for i in range(0, 8):
 		q, w = klist_l[i]
 		if q==x and w ==y:
@@ -67,7 +65,6 @@ def cl(x, y):
 def check_last_row(x, y, dr):
 	for num in range (0, 8):
 		if dr >= numlist[num]:
-			print("you cant moce foward")
 			x = x
 			y = y
 			print(x, y)
@@ -75,7 +72,6 @@ def check_last_row(x, y, dr):
 	if dr < (list(px.keys())[list(px.values()).index(x)]):
 		print(list(px.keys())[list(px.values()).index(x)])
 		print(dr)
-		print("You can movr from isnside here")
 		x -= (55*dr)
 		y = y
 		print(x, y)
@@ -136,10 +132,7 @@ def impostar(x, y, dr):
 		elif x == px[1]:
 			x += (w*(dr-1))
 			y -=  w
-
-		print("the fuck am i back here")
-			
-		
+					
 	elif dr != 6 and check(y):
 		if x in range(px[1], px[5]):
 			x += (w*dr)
@@ -205,7 +198,6 @@ def impostar(x, y, dr):
 			y -=w
 		elif x == px[2] and dr <2:
 			x -= (w*dr)
-		print("the fuck am i back here")
 	
 	x, y = cs(x, y)	 
 	x, y = cl(x, y)
